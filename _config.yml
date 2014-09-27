@@ -10,3 +10,4 @@ github_username:  aliok
 
 # Build settings
 markdown: kramdown
+highlighter: pygments
