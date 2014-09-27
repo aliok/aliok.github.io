@@ -6,14 +6,17 @@
 
 
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-family: 'Open Sans', Geneva, Helvetica, Arial, 'Lucida Sans', sans-serif;
+$base-font-weight: 300;
+$base-font-weight-bold: 400;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
+
 $spacing-unit:     30px;
 
-$text-color:       #323438;
+$text-color:       #060606;
 $background-color: #fafafa;
 $brand-color:      #2a7ae2;
 
@@ -49,3 +52,7 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+// checked font-weight values used. 300 and 400 are the only ones (except code blocks).
+// 600 is there for future use.
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,600,400);
