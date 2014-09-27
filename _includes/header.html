@@ -14,6 +14,11 @@
       </a>
 
       <div class="trigger">
+        <!--Two static htmls-->
+        <a class="page-link" href="{{ '/projects.html' | prepend: site.baseurl }}">Projects</a>
+        <a class="page-link" href="{{ '/misc.html' | prepend: site.baseurl }}">Misc</a>
+
+        <!--md files picked up by Jekyll-->
         {% for page in site.pages %}
           {% if page.title %}
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Projects</h1>
+
+  <div class="project-list">
+    {% for post in site.posts %}
+      {% if post.project == true %}
+      <div class="project-list-item">
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <img class="project-thumbnail" src="{{ post.thumbnail | prepend: site.baseurl }}"/>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <span class="project-summary">{{ post.excerpt }}</span>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</div>
