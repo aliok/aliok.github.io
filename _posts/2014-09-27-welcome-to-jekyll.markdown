@@ -7,7 +7,7 @@ project: true
 thumbnail: "/post-assets/using-your-ssl-certificate-on-glassfish-3/temp_thumb.jpg" 
 banner: "/post-assets/using-your-ssl-certificate-on-glassfish-3/temp_picture.jpg"
 
-2---
+---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.
 
