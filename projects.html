@@ -7,17 +7,23 @@ layout: default
   <h1 class="page-heading">Projects</h1>
 
   <div class="project-list">
-    {% for post in site.posts %}
-      {% if post.project == true %}
-      <div class="project-list-item">
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-            <img class="project-thumbnail" src="{{ post.thumbnail | prepend: site.baseurl }}"/>
+    {% for post in site.projects %}
+      {% assign mod = forloop.index0 | modulo:2 %}
+      {% if mod == 0 %}
+      <div class="row">
+      {% endif %}
+        <div class="span6">
+          <div class="project-list-item">
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
+            <div class="project-thumbnail" style="background-image: url('{{ post.thumbnail | prepend: site.baseurl }}');" ></div>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        <span class="project-summary">{{ post.excerpt }}</span>
-      </div>
+            <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
+            <span class="project-summary">{{ post.content | split:'<!--more-->' | first }}</span>
+          </div>
+        </div>
+      {% if mod == 1 %}
+        </div>
       {% endif %}
     {% endfor %}
   </div>

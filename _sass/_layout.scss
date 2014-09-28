@@ -183,6 +183,7 @@
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
+    display: block;
 }
 
 .post-link {
@@ -239,17 +240,33 @@
 
 
 /**
- * Project list
+ * Project and misc list
  */
 
-.project-list {
+.project-list, .misc-list {
+}
 
+.project-list-item, .misc-list-item {
+  // add some bottom margin
+  margin-bottom: $spacing-unit * 2;
+
+  // smaller bottom margin in small screens
+  @include media-query($on-palm) {
+    margin-bottom: $spacing-unit * 1.5;
+  }
+}
+
+.project-summary, .misc-summary{
 }
 
 .project-thumbnail{
+  background-size: cover;
+  background-position: center;
+  min-height: 160px;
 
-}
-
-.project-summary{
+  // show it smaller in small screens
+  @include media-query($on-palm) {
+    min-height: 90px;
+  }
 
 }

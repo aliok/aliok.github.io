@@ -28,8 +28,10 @@ $grey-color-dark:  darken($grey-color, 25%);
 
 $on-palm:          600px;
 $on-laptop:        800px;
+$laptop-site-width:800px;
 
-
+/* Columns will stack on screens less than this wide. */
+$stack-width: 600px;
 
 // Using media queries with like this:
 // @include media-query($palm) {
@@ -50,7 +52,8 @@ $on-laptop:        800px;
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "fluid"
 ;
 
 // checked font-weight values used. 300 and 400 are the only ones (except code blocks).

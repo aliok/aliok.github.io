@@ -7,7 +7,15 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://aliok.github.io" # the base hostname & protocol for your site
 twitter_username: aliok_tr
 github_username:  aliok
+# see http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/
+excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
 highlighter: pygments
+
+collections:
+  projects:
+    output: true
+  miscs:
+    output: true
