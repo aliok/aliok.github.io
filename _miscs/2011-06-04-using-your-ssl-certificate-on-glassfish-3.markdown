@@ -2,11 +2,13 @@
 layout: post
 title:  "Using your SSL certificate on Glassfish 3"
 date:   2011-06-04 01:07:43
-categories: tips system-admin
-project: false
+banner: "/post-assets/using-your-ssl-certificate-on-glassfish-3/temp_picture.jpg"
+
 ---
 
 This was kind of problematic for me and my colleagues, so after I manage to set our SSL certificate, I decided to share the story.
+<!--more-->
+
 Before doing anything, back up the files under `$GFHOME/domains/yourdomain/config`.
 
 Steps are:

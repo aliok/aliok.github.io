@@ -2,14 +2,13 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2014-09-27 01:07:43
-categories: jekyll update
-project: true
 thumbnail: "/post-assets/using-your-ssl-certificate-on-glassfish-3/temp_thumb.jpg" 
 banner: "/post-assets/using-your-ssl-certificate-on-glassfish-3/temp_picture.jpg"
 
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.
+<!--more-->
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
