@@ -17,5 +17,5 @@ highlighter: pygments
 collections:
   projects:
     output: true
-  miscs:
+  miscposts:
     output: true

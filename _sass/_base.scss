@@ -205,3 +205,31 @@ pre {
         }
     }
 }
+
+
+/**
+ * Based from Bootstrap .label
+*/
+.big-link-wrapper{
+  display: block;
+  text-align: center;
+  margin-bottom: $spacing-unit * 2;
+}
+.big-link {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 150%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  background-color: $brand-color;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+
+  &:visited {
+    color: #fff;
+    background-color: $brand-color;
+  }
+}

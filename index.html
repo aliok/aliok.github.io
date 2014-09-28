@@ -4,18 +4,83 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+  <h1 class="page-heading-big">About</h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  TODO ABOUT
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+  <div class="big-link-wrapper">
+    <a class="big-link" href="{{ 'about.html' | prepend: site.baseurl }}">See more about me</a>
+  </div>
+
+</div>
+
+<div class="home">
+
+  <h1 class="page-heading-big">
+      <a href="{{ 'projects.html' | prepend: site.baseurl }}">Projects</a>
+  </h1>
+
+  <div class="project-list">
+    {% assign projectCount = site.projects | size %}
+    {% for post in site.projects %}
+      {% assign mod = forloop.index0 | modulo:2 %}
+      {% if mod == 0 %}
+      <div class="row">
+      {% endif %}
+        <div class="span6">
+          <div class="project-list-item">
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
+            <div class="project-thumbnail" style="background-image: url('{{ post.thumbnail | prepend: site.baseurl }}');" ></div>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+
+            <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
+            <span class="project-summary">{{ post.content | split:'<!--more-->' | first }}</span>
+          </div>
+        </div>
+      {% if mod == 1 %}
+        </div>
+      {% endif %}
+
+      <!--only display first 4 projects-->
+      {% if forloop.index0 == 3 %}
+        {% break %}
+      {% endif %}
+
     {% endfor %}
-  </ul>
+  </div>
+
+  <div class="big-link-wrapper">
+    <a class="big-link" href="{{ 'projects.html' | prepend: site.baseurl }}">See more of my projects</a>
+  </div>
+
+</div>
+
+
+<div class="home">
+
+  <h1 class="page-heading-big">
+      <a href="{{ 'miscposts.html' | prepend: site.baseurl }}">Misc Posts</a>
+  </h1>
+
+  <div class="misc-list">
+    {% assign miscPostCount = site.miscposts | size %}
+    {% for post in site.miscposts %}
+      <div class="row">
+        <div class="span12">
+          <div class="misc-list-item">
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+
+            <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
+            <span class="misc-summary">{{ post.content | split:'<!--more-->' | first }}</span>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="big-link-wrapper">
+    <a class="big-link" href="{{ 'miscposts.html' | prepend: site.baseurl }}">See more of my posts</a>
+  </div>
 
 </div>
