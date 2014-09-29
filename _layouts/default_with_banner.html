@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  {% if page.alternate_banner %}
+  <body class="with-banner alternate">
+  {% else %}
+  <body class="with-banner">
+  {% endif %}
+
+    {% include header.html %}
+
+    <div class="post-banner" style="background-image: url('{{ page.banner | prepend: site.baseurl }}');" ></div>
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
