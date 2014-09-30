@@ -260,9 +260,9 @@ body.with-banner {
       width: 100%;
 
       a {
-        background-color: rgba(200, 200, 200, 0.30);
         border-radius: 5px;
         padding: 10px;
+        background-color: rgba(200, 200, 200, 0.30);
       }
 
       .site-title,
@@ -273,20 +273,44 @@ body.with-banner {
           color: white;
         }
       }
+
+      .site-nav {
+        @include media-query($on-palm) {
+          color: initial;
+        }
+        a {
+          @include media-query($on-palm) {
+            color: initial;
+            background-color: initial;
+          }
+        }
+      }
     }
   }
 
   &.alternate .site-header .wrapper {
     a {
-      background-color: rgba(50, 50, 50, 0.30);
+      background-color: rgba(50, 50, 50, 0.50);
     }
 
     .site-title,
     .site-nav {
       float: inherit;
-      color: $grey-color;
+      color: black;
       a {
-        color: $grey-color;
+        color: black;
+      }
+    }
+
+    .site-nav {
+      @include media-query($on-palm) {
+        color: initial;
+      }
+      a {
+        @include media-query($on-palm) {
+          color: initial;
+          background-color: initial;
+        }
       }
     }
   }
@@ -299,7 +323,7 @@ body.with-banner {
 
   // show it smaller in small screens
   @include media-query($on-palm) {
-    min-height: 120px;
+    min-height: 200px;
   }
 }
 
