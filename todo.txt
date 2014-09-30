@@ -1,2 +1,5 @@
 1. Something on the left side of each banner to give credit to the picture author
-2.
+2. Custom domain setup
+3. Add a post in previous website referencing new one
+4. Google Analytics
+5. Disquss or whatever it is
