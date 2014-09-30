@@ -7,7 +7,8 @@ layout: default
   <h1 class="page-heading-big">Misc Posts</h1>
 
   <div class="misc-list">
-    {% for post in site.miscposts %}
+      {% assign sorted_posts = (site.miscposts | sort: 'date') %}
+      {% for post in sorted_posts reversed %}
       <div class="row">
         <div class="span12">
           <div class="misc-list-item">
