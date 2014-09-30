@@ -151,6 +151,6 @@ negam
 Burada geçen içki, sarhoş, kadeh ve aşık kelimelerinin aynen diğer divan edebiyatı örneklerinde olduğu gibi kelime anlamında kullanılmadıklarını da belirtmek isterim.
 
 ### El yazması
-Divanın tamamının eski alfabe ile yazılmış bir el yazmasını şurada bulabilirsiniz: <https://docs.google.com/file/d/0B4WEdht5JkNScmpmSFhEWUdvakE/edit?usp=sharing>
+Divanın tamamının eski alfabe ile yazılmış bir el yazmasını şurada bulabilirsiniz: [Link](https://docs.google.com/file/d/0B4WEdht5JkNScmpmSFhEWUdvakE/edit?usp=sharing)
 
 Bahar kasidesi sayfa 35’te (veya PDF sayfası ile 160’ta)

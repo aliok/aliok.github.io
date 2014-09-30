@@ -2,7 +2,9 @@
 layout: post
 title:  "Horror Story"
 date:   2014-05-15 01:07:43
-banner: "/post-assets/layout/temp_picture.jpg"
+banner: "/post-assets/layout/horror-story-banner.jpg"
+alternate_banner: True
+# from http://upload.wikimedia.org/wikipedia/commons/b/b8/Tennis_for_Two_-_Modern_recreation.jpg
 
 ---
 
