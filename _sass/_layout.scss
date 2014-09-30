@@ -319,7 +319,7 @@ body.with-banner {
 .post-banner {
   background-size: cover;
   background-position: center;
-  min-height: 400px;
+  min-height: 500px;
 
   // show it smaller in small screens
   @include media-query($on-palm) {
