@@ -2,7 +2,7 @@
 layout: post
 title:  "Using your SSL certificate on Glassfish 3"
 date:   2011-06-04 01:07:43
-banner: "/post-assets/using-your-ssl-certificate-on-glassfish-3/temp_picture.jpg"
+banner: "/post-assets/layout/temp_picture.jpg"
 
 ---
 
@@ -83,4 +83,4 @@ Zertifikatsfingerabdruck (MD5): XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX
 {% endhighlight %}
 
 Final step of the whole process is using our domain alias as the “certificate nickname” on GlassFish:
-![Screenshot](/post-assets/using-your-ssl-certificate-on-glassfish-3/screenshot0.png)
+![Screenshot](/post-assets/using-your-ssl-certificate-on-glassfish-screenshot0.png)
