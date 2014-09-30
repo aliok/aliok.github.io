@@ -2,8 +2,8 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2014-09-27 01:07:43
-thumbnail: "/post-assets/using-your-ssl-certificate-on-glassfish-3/temp_thumb.jpg" 
-banner: "/post-assets/using-your-ssl-certificate-on-glassfish-3/temp_picture.jpg"
+thumbnail: "/post-assets/layout/temp_thumb.jpg"
+banner: "/post-assets/layout/temp_picture.jpg"
 
 ---
 
