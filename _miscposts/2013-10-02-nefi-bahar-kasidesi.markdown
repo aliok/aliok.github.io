@@ -2,8 +2,8 @@
 layout: post
 title:  "Nef’i Bahar Kasidesi – eski alfabe"
 date:   2013-10-02 01:07:43
-banner: "/post-assets/layout/temp_picture.jpg"
-
+banner: "/post-assets/layout/nefi-bahar-kasidesi-banner.jpg"
+alternate_banner: True
 ---
 
 I normally post in English, but the poem here is just too complex to translate. If you don’t speak and understand Turkish, skip this post.
