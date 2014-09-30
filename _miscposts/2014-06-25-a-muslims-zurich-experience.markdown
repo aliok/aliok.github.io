@@ -2,7 +2,9 @@
 layout: post
 title:  "A Muslim’s Zurich Experience"
 date:   2014-06-25 01:07:43
-banner: "/post-assets/layout/temp_picture.jpg"
+banner: "/post-assets/layout/a-muslims-zurich-experience.jpg"
+alternate_banner: True
+# from http://upload.wikimedia.org/wikipedia/commons/9/95/Moschee_Wangen_bei_Olten.jpg
 
 ---
 
