@@ -13,6 +13,10 @@
 
     <div class="post-banner" style="background-image: url('{{ page.banner | prepend: site.baseurl }}');" ></div>
 
+    <div class="banner-attribution">
+        <a href="{{ page.banner_source }}">{{ page.banner_attribution }}</a>
+    </div>
+
     <div class="page-content">
       <div class="wrapper">
         {{ content }}

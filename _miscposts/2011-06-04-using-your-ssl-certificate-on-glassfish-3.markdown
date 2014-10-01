@@ -3,7 +3,9 @@ layout: post
 title:  "Using your SSL certificate on Glassfish 3"
 date:   2011-06-04 01:07:43
 banner: "/post-assets/layout//using-your-ssl-certificate-on-glassfish-banner.jpg"
-# from http://upload.wikimedia.org/wikipedia/commons/3/3d/Red_lionfish_near_Gilli_Banta_Island.JPG
+banner_attribution: "Picture by Alexander Vasenin"
+banner_source: "http://commons.wikimedia.org/wiki/File:Red_lionfish_near_Gilli_Banta_Island.JPG"
+
 ---
 
 This was kind of problematic for me and my colleagues, so after I manage to set our SSL certificate, I decided to share the story.

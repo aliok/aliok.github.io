@@ -4,6 +4,9 @@ title:  "Nef’i Bahar Kasidesi – eski alfabe"
 date:   2013-10-02 01:07:43
 banner: "/post-assets/layout/nefi-bahar-kasidesi-banner.jpg"
 alternate_banner: True
+banner_attribution: "Partial shot of the manuscript"
+banner_source: "https://archive.org/details/divannefi00nef1uoft"
+
 ---
 
 I normally post in English, but the poem here is just too complex to translate. If you don’t speak and understand Turkish, skip this post.

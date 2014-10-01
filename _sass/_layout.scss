@@ -265,6 +265,20 @@ body.with-banner {
         background-color: rgba(200, 200, 200, 0.30);
       }
 
+      a.menu-icon {
+        @include media-query($on-palm) {
+          padding: 0;
+          padding-top: 10px;
+        }
+      }
+
+      .site-title {
+        padding-left: 50px;
+        padding-right: 50px;
+        display: inline-block;
+        margin-top: 9px;
+      }
+
       .site-title,
       .site-nav {
         float: inherit;
@@ -325,6 +339,13 @@ body.with-banner {
   @include media-query($on-palm) {
     min-height: 200px;
   }
+}
+
+.banner-attribution {
+  text-align: right;
+  margin-right: $spacing-unit;
+  font-size: 10px;
+  font-weight: $base-font-weight-bold;
 }
 
 /**

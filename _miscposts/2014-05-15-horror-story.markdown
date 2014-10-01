@@ -4,7 +4,8 @@ title:  "Horror Story"
 date:   2014-05-15 01:07:43
 banner: "/post-assets/layout/horror-story-banner.jpg"
 alternate_banner: True
-# from http://upload.wikimedia.org/wikipedia/commons/b/b8/Tennis_for_Two_-_Modern_recreation.jpg
+banner_attribution: "Picture by JohnnyMrNinja"
+banner_source: "http://commons.wikimedia.org/wiki/File:Tennis_for_Two_-_Modern_recreation.jpg"
 
 ---
 
