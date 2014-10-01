@@ -358,3 +358,39 @@ body.with-banner {
   }
 
 }
+
+/** About page
+ *
+ */
+.about-header {
+  background-color: $grey-color-lighter;
+  .site-header {
+    border-bottom: none;
+  }
+}
+
+.about-top {
+  background-color: $grey-color-lighter;
+  border-bottom: 1px solid $grey-color-light;
+  display: block;
+  text-align: center;
+  .tagline {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: $spacing-unit *2;
+  }
+
+  .profile-picture {
+    display: block;
+    text-align: center;
+    margin-bottom: $spacing-unit;
+    padding-top: $spacing-unit * 2;
+  }
+}
+
+.about-work {
+  text-align: center;
+  font-weight: 500;
+}
