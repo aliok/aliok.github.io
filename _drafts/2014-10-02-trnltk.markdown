@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "Turkish Natural Language Toolkit"
+date:   2014-10-02 00:38:00
+thumbnail: "/post-assets/layout/temp_thumb.jpg"
+banner: "/post-assets/layout/temp_picture.jpg"
+
+---
+
+[TRNLTK](https://github.com/aliok/trnltk-java) is a natural language processing library for Turkish.
+<!--more-->
+
+Why another NLP library? Taken from project site :
+
+> I've inspected other other approaches and I saw that tracking the problems are very hard with them. 
+> For example, one approach is creating a suffix graph by defining what suffix can come after other 
+> suffix. But with that approach it is impossible to have an overview of the graph, 
+> since there would be thousands of nodes and edges.
+
+You can dive into the project by checking the [kick start](https://github.com/aliok/trnltk-java/blob/master/docs/tutorial/simple_parsing.md).
+
+TRNLTK is built because of the limitations of most used Turkish NLP library [Zemberek](https://github.com/ahmetaa/zemberek-nlp).
+
+TRNLTK and Zemberek teams once tried to work together but it didn't work because of the time constraints.
+We're good friends with Akin brothers (authors of Zemberek) and both teams try to provide a proper solution to Turkish NLP needs. 
+ 
+What makes it different from [Zemberek](https://github.com/ahmetaa/zemberek-nlp) are:
+
+* It is highly customizable
+* It is very easy to extend
+* It is less hacky
+* It is much easier to understand the underlying graph
+* It is much easier to maintain
+* Morphologic parser offers more parse results
+
+Zemberek is better in these subjects:
+  
+* Project is more actively developed
+* Performance is better
+* It offers more tools such as very basic morphologic disambiguator
+* It has a bigger community 
+
