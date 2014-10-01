@@ -19,3 +19,5 @@ collections:
     output: true
   miscposts:
     output: true
+  drafts:
+      output: true
