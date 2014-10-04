@@ -1,4 +1,2 @@
-* Something on the left side of each banner to give credit to the picture author
 * Add a post in previous website referencing new one
-* Google Analytics
 * Disquss or whatever it is
