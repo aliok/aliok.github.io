@@ -44,14 +44,14 @@ This results in a certificate signing request, server.csr. Now we have two files
 * server.csr
 
 Next step is uploading server.csr file to one of the certificate authorities (I used Godaddy and I was pretty happy with their service) and receiving signed 
-certificate. Certificate authorities looks for the “whois” record of your domain and if they find a technical representative email address, they send the 
-signed certificate to that email. If there is no email address (like one of the domains I set the SSL up), they give you a code (like abcd123) and require 
+certificate. Certificate authorities looks for the *whois* record of your domain and if they find a technical representative email address, they send the 
+signed certificate to that email. If there is no email address (like one of the domains I set up the SSL), they give you a code (like abcd123) and require 
 you to either add a subdomain with that code or add a html page named with the code (and also with the content filled with the code).
 
 From certificate authority, you should generally receive two files
 
-* Your signed certificate : generally named as “yourdomain.com.crt”
-* Root certificate of your certificate (you might receive more than one. In some cases certification authority sends the intermediate certificates) : Godaddy names it “gd_bundle.crt”
+* Your signed certificate : generally named as *yourdomain.com.crt*
+* Root certificate of your certificate (you might receive more than one. In some cases certification authority sends the intermediate certificates) : Godaddy names it *gd_bundle.crt*
 
 Next step is importing the keystore I used into the Glassfish’s keystore:
 {% highlight bash %}
