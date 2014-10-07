@@ -9,8 +9,8 @@ layout: default
   </h1>
 
   <div class="project-list">
-    {% assign sorted_posts = (site.projects | sort: 'date') %}
-    {% for post in sorted_posts reversed limit:4 %}
+    {% assign sorted_posts = (site.projects | sort: 'date') | reverse %}
+    {% for post in sorted_posts limit:4 %}
       {% assign mod = forloop.index0 | modulo:2 %}
       {% if mod == 0 %}
       <div class="row">
@@ -56,8 +56,8 @@ layout: default
   </h1>
 
   <div class="misc-list">
-    {% assign sorted_posts = (site.miscposts | sort: 'date') %}
-    {% for post in sorted_posts reversed limit:4 %}
+    {% assign sorted_posts = (site.miscposts | sort: 'date') | reverse %}
+    {% for post in sorted_posts limit:4 %}
       <div class="row">
         <div class="span12">
           <div class="misc-list-item">
