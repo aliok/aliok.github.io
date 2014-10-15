@@ -13,9 +13,11 @@
 
     <div class="post-banner" style="background-image: url('{{ page.banner | prepend: site.baseurl }}');" ></div>
 
+    {% if page.banner_attribution %}
     <div class="banner-attribution">
-        <a href="{{ page.banner_source }}">{{ page.banner_attribution }}</a>
+        <a href="{{ page.banner_source }}">{{ page.banner_attribution | markdownify }}</a>
     </div>
+    {% endif %}
 
     <div class="page-content">
       <div class="wrapper">

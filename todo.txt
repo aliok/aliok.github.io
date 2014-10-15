@@ -1,3 +1,8 @@
 * Add a post in previous website referencing new one
 * Edit posts in previous website referencing new posts
 * JS code to make the imgs bigger. except banners and the imgs within an <a> or <button>
+
+* Projects:
+-- Trnltk
+-- Annotator
+--
