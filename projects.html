@@ -7,7 +7,8 @@ layout: default
   <h1 class="page-heading-big">Projects</h1>
 
   <div class="project-list">
-    {% for post in site.projects %}
+    {% assign sorted_posts = (site.projects | sort: 'date') %}
+    {% for post in sorted_posts reversed %}
       {% assign mod = forloop.index0 | modulo:2 %}
       {% if mod == 0 %}
       <div class="row">
