@@ -3,6 +3,5 @@
 * JS code to make the imgs bigger. except banners and the imgs within an <a> or <button>
 
 * Projects:
--- Trnltk
 -- Annotator
 --

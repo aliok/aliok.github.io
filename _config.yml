@@ -19,5 +19,7 @@ collections:
     output: true
   miscposts:
     output: true
+  techposts:
+      output: true
   drafts:
       output: true

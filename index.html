@@ -48,11 +48,40 @@ layout: default
 
 </div>
 
+<div class="home">
+
+    <h1 class="page-heading-big">
+        Last 4 <a href="{{ 'techposts.html' | prepend: site.baseurl }}">tech posts</a>
+    </h1>
+
+    <div class="misc-list">
+        {% assign sorted_posts = (site.techposts | sort: 'date') | reverse %}
+        {% for post in sorted_posts limit:4 %}
+        <div class="row">
+            <div class="span12">
+                <div class="misc-list-item">
+                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+
+                    <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
+                    <span class="misc-summary">{{ post.content | split:'<!--more-->' | first }}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="big-link-wrapper">
+        <a class="big-link" href="{{ 'techposts.html' | prepend: site.baseurl }}">See more tech</a>
+    </div>
+
+</div>
+
 
 <div class="home">
 
   <h1 class="page-heading-big">
-      Last 4 <a href="{{ 'miscposts.html' | prepend: site.baseurl }}">posts</a>
+      Last 4 <a href="{{ 'miscposts.html' | prepend: site.baseurl }}"> misc posts</a>
   </h1>
 
   <div class="misc-list">
@@ -73,7 +102,7 @@ layout: default
   </div>
 
   <div class="big-link-wrapper">
-    <a class="big-link" href="{{ 'miscposts.html' | prepend: site.baseurl }}">See more of my posts</a>
+    <a class="big-link" href="{{ 'miscposts.html' | prepend: site.baseurl }}">See more misc</a>
   </div>
 
 </div>
