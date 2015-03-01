@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "TRNLTK 1.0.0 is released"
+date:   2013-05-31 12:02:03
+banner: "/post-assets/layout/trnltk-banner.jpg"
+alternate_banner: True
+banner_attribution: "Design on paper during TRNLTK algorithm development"
+banner_source: "#"
+
+---
+
+I finally made the decision to release a version on [TRNLTK](https://github.com/aliok/trnltk-java). It is *Turkish Natural Language Toolkit*.
+<!--more-->
+
+Here is some wiki about it: <https://code.google.com/p/zemberek3/wiki/TRNLTK_Release_1_0_0>
+
+Here are the documents for TRNLTK : <https://github.com/aliok/trnltk-java/blob/master/docs/102.md>
+
+I wrote a very robust morphological parser which is easy to maintain, extend and customize. I am proud of that.
+TRNLTK parser is an alternative to Zemberek, only *proper* open source project in Turkish language.
+A good working version of Zemberek morphological parser is implemented around 5 years ago
+and used in a lot of places, including major Linux distributions, major word processors and even big-browsers.
+
+TRNLTK parser is solving the same problem IMHO in a much better way: morphologic parsing.
+Of course there are pros and cons. I wrote especially the cons in a little bit more detail in the wiki page I wrote above.
+
+
+Again, even if this is a big problem for Turkish language because of its behavior,
+the real thing to solve is sentence parsing, part of speech tagging and the prerequisite of all, disambiguation.
+
+Since January 2013, we work with the authors of Zemberek together and I hope
+we'll find a good open source solutions to big problems described above.

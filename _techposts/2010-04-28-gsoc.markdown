@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Google Summer of Code"
+date:   2010-04-28 00:00:00
+banner: "/post-assets/layout/gsoc.jpg"
+alternate_banner: True
+banner_attribution: "Picture by Adnan Mughal"
+banner_source: "http://www.imblog.info/"
+
+---
+
+Accepted students for Google Summer of Code 2010 have been announced, and I am an accepted student too.
+<!--more-->
+
+Thanks go to my mentor Matthias Wessendorf, Apache MyFaces community and Google :)
+
+You can find all accepted students and the projects at
+<http://socghop.appspot.com/gsoc/program/list_projects/google/gsoc2010>
+

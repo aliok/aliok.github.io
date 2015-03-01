@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "JavaOne 2010"
+date:   2010-10-03 00:00:00
+banner: "/post-assets/layout/javaone-2010.jpg"
+alternate_banner: True
+banner_attribution: "Photo by Dustin Marx"
+banner_source: "http://marxsoftware.blogspot.ch/2010/09/inauspicious-start-to-javaone-2010.html"
+
+---
+
+Matthias Wessendorf and I had a session "What's cool in Apache MyFaces?" in JavaOne 2010, San Francisco.
+<!--more-->
+
+Here are the slides : <http://www.slideshare.net/aliok/whats-cool-in-apache-myfaces>
+
+Html5 demo is deployed on Google App Engine : <http://bit.ly/myfaces-html5-j1-demo>
+
+Html5 demo source can be found at : <http://github.com/aliok/javaone-myfaces-html5-demo>
+
+CODI demo is available at <http://github.com/matzew/codi-scope-sample>
+
+It was really fun and valuable for me.
+
+![Screenshot](/post-assets/javaone-2010-01.jpg)
+
+![Screenshot](/post-assets/javaone-2010-02.jpg)
+
+![Screenshot](/post-assets/javaone-2010-03.jpg)
