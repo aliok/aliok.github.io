@@ -415,3 +415,59 @@ body.with-banner {
   text-align: center;
   font-weight: 500;
 }
+
+//////////////////////aside content work starts
+.wrapper.full{
+  max-width: 95%;
+  width: 95%;
+}
+
+.primary{
+  max-width: 65%;
+  width: 65%;
+  display: inline-block;
+}
+
+.secondary{
+  padding-top: 2*$spacing-unit;
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+}
+
+.aside-profile-picture{
+  width: 70%;
+  height: auto;
+}
+
+@include media-query($on-palm){
+  .wrapper.full{
+    max-width: 90%;
+    width: 90%;
+  }
+
+  .primary{
+    max-width: 95%;
+    width: 95%;
+    display: block;
+  }
+
+  .secondary{
+    padding-top: $spacing-unit/3;
+    width: 90%;
+    display: block;
+    vertical-align: top;
+    float: left;
+    background-color: $grey-color-lighter;
+    border-top: 1px solid $grey-color-light;
+    border-bottom: 1px solid $grey-color-light;
+  }
+
+  .aside-profile-picture{
+    width: 40%;
+    height: auto;
+  }
+
+}
+//////////////////////aside content work ends

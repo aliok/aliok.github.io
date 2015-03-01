@@ -8,8 +8,11 @@
     {% include header.html %}
 
     <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+      <div class="wrapper full">
+        <div class="primary">
+            {{ content }}
+        </div>
+        {% include aside.html %}
       </div>
     </div>
 

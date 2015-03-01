@@ -20,10 +20,14 @@
     {% endif %}
 
     <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+      <div class="wrapper full">
+        <div class="primary">
+          {{ content }}
 
-        {% include disqus.html %}
+          {% include disqus.html %}
+        </div>
+
+        {% include aside.html %}
       </div>
     </div>
 
