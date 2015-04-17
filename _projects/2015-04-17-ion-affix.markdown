@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "ion-affix : Sticky affix elements for Ionic framework"
+date:   2015-04-17 23:00:00
+thumbnail: "/post-assets/layout/ion-affix-thumb.jpg"
+banner: "/post-assets/layout/ion-affix-banner.jpg"
+alternate_banner: True
+banner_attribution: "*Post it* Picture by Nevit Dilmen"
+banner_source: "http://simple.wikipedia.org/wiki/File:Postit.jpg"
+
+---
+
+**ion-affix** is a lightweight Angular directive for Ionic framework to have sticky affix elements.
+<!--more-->
+
+Fork the project on [Github](https://github.com/aliok/ion-affix).
+
+Initial idea is [this gist](https://gist.github.com/colllin/1a0c3a91cc641d8e578f) of [Collin Donahue-Oponski](https://github.com/colllin)
+
+## Requirements
+Directive requires no additional dependencies. Just Ionic and Angular.
+
+## Installation with Bower
+* Issue `bower install ion-affix`.
+* Reference the JS file in your html:
+
+{% highlight html %}
+<script src="/bower_components/ion-affix/ion-affix.js"></script>
+{% endhighlight %}
+
+## Manual installation
+* Download the [project zip](https://github.com/aliok/ion-affix/archive/master.zip) and extract it.
+* Reference the JS file in your html:
+
+{% highlight html %}
+<script src="/bower_components/ion-affix/ion-affix.js"></script>
+{% endhighlight %}
+
+## Instructions
+{% highlight html %}
+<article class="post" ng-repeat="post in posts">
+    <h1 ion-affix data-affix-within-parent-with-class="post">{{ "{{ post.title " }}}}</h1>
+    <main>
+        <p>{{ "{{ post.body " }}}}</p>
+    </main>
+</article>
+{% endhighlight %}
+
+In the example above, title `<h1>` will be the sticky header for everything within post `<article>`.
+ 
+You have to add 2 things to item that you want as sticky affix:
+
+1. `ion-affix` attribute
+2. `data-affix-within-parent-with-class` with CSS class of the container that you want to have the sticky element for (`<article>` in the example above).
+
+  
+## Demos
+
+### Demo : simple
+
+
+### Demo : group header
+
+### Demo : cards
+ 
+### Demo : performance
+
+
+## Notes
+Quoting the [Gist](https://gist.github.com/colllin/1a0c3a91cc641d8e578f):
+ 
+> * Must be used within an `<ion-scroll>` or `<ion-content>`
+> * You must group each header and contents together within a container element (this container element defines the area in which the header should stay).
+> * Not tested with `collection-repeat` -- only with `ng-repeat` (please let me know if it works and I'll update)
+> * This directive works by cloning the *sticky header* and appending it between the outer scroll container and inner scroll container -- as a sibling 
+  of the scrollbar, for reference. Thus, you might need to edit your CSS if it doesn't already apply correctly to the cloned header element.
+
+All of them apply to `ion-affix` as well.
+
+## Credits
+Initial idea is [this gist](https://gist.github.com/colllin/1a0c3a91cc641d8e578f) of [Collin Donahue-Oponski](https://github.com/colllin)
+
+I converted the idea in there into a project. 
+
+Using that code as a basis, I
+
+* made the code more beautiful
+
+* documented the code
+
+* got rid of dependencies to Underscore.js and jQuery
+
+* fixed a couple of alignment issues (e.g. when there are fixed or absolute positioned elements already on top.
+  or when the affix container had bottom margin)
+
+* published it as a Bower package so that folks can use it w/o copy-pasting the Gist and creating the file etc.
+
+* implemented a couple of demos
