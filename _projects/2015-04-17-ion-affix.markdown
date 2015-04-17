@@ -19,6 +19,38 @@ Initial idea is [this gist](https://gist.github.com/colllin/1a0c3a91cc641d8e578f
 
 ## Requirements
 Directive requires no additional dependencies. Just Ionic and Angular.
+  
+## Demos
+
+**You can find demos at Codepen: <http://codepen.io/collection/DrxWPr/>**
+
+### Demo : simple
+
+<div class="codepen-mobile">
+<p data-height="600" data-theme-id="14233" data-slug-hash="GJKNLb" data-default-tab="result" data-user="aliok" class='codepen'>See the Pen <a href='http://codepen.io/aliok/pen/GJKNLb/'>ion-affix simple demo</a> by Ali Ok (<a href='http://codepen.io/aliok'>@aliok</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
+### Demo : group header
+
+<div class="codepen-mobile">
+<p data-height="600" data-theme-id="14233" data-slug-hash="gpYLJV" data-default-tab="result" data-user="aliok" class='codepen'>See the Pen <a href='http://codepen.io/aliok/pen/gpYLJV/'>ion-affix group demo</a> by Ali Ok (<a href='http://codepen.io/aliok'>@aliok</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
+### Demo : cards
+
+<div class="codepen-mobile">
+<p data-height="600" data-theme-id="14233" data-slug-hash="LVPbMB" data-default-tab="result" data-user="aliok" class='codepen'>See the Pen <a href='http://codepen.io/aliok/pen/LVPbMB/'>ion-affix cards demo</a> by Ali Ok (<a href='http://codepen.io/aliok'>@aliok</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+ 
+### Demo : performance
+
+<div class="codepen-mobile">
+<p data-height="600" data-theme-id="14233" data-slug-hash="MwgbNo" data-default-tab="result" data-user="aliok" class='codepen'>See the Pen <a href='http://codepen.io/aliok/pen/MwgbNo/'>ion-affix performance demo</a> by Ali Ok (<a href='http://codepen.io/aliok'>@aliok</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
 
 ## Installation with Bower
 * Issue `bower install ion-affix`.
@@ -29,7 +61,7 @@ Directive requires no additional dependencies. Just Ionic and Angular.
 {% endhighlight %}
 
 ## Manual installation
-* Download the [project zip](https://github.com/aliok/ion-affix/archive/master.zip) and extract it.
+* Download the project zip [from here](https://github.com/aliok/ion-affix/releases) and extract it.
 * Reference the JS file in your html:
 
 {% highlight html %}
@@ -53,17 +85,8 @@ You have to add 2 things to item that you want as sticky affix:
 1. `ion-affix` attribute
 2. `data-affix-within-parent-with-class` with CSS class of the container that you want to have the sticky element for (`<article>` in the example above).
 
-  
-## Demos
+Don't forget to add `'ion-affix'` to your Angular module dependencies!
 
-### Demo : simple
-
-
-### Demo : group header
-
-### Demo : cards
- 
-### Demo : performance
 
 
 ## Notes

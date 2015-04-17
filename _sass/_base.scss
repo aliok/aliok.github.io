@@ -255,3 +255,12 @@ dd {
     margin-left: initial;
   }
 }
+
+
+//make CodePen demos narrower
+.codepen-mobile{
+  iframe[src*="codepen.io"] {
+    //height must be passed to embed code!
+    width: 320px !important;
+  }
+}
