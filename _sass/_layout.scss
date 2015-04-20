@@ -416,6 +416,14 @@ body.with-banner {
   font-weight: 500;
 }
 
+.about-summary {
+  text-align: left;
+  font-weight: 500;
+  border-top: 1px solid $grey-color-light;
+  margin-top: $spacing-unit;
+  padding-top: $spacing-unit;
+}
+
 //////////////////////aside content work starts
 .wrapper.full{
   max-width: 95%;
