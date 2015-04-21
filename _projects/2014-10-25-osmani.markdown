@@ -39,9 +39,10 @@ primary schools to teach reading and writing to children.
 ### Process and technical properties
  
 Here is how I proceeded:
- 1. Convert source document to JPGs
- 1. Display JPGs and annotate areas
- 1. Write annotations to a plain text file
+
+1. Convert source document to JPGs
+1. Display JPGs and annotate areas
+1. Write annotations to a plain text file
  
 Annotation is done with a web UI. It is Html canvas where user can select a rectangular area.
 When the area is selected, user types the Arabic-script word and Latin-script word.
