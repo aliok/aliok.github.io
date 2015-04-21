@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "Turkish Arabic-script training data"
+date:   2014-10-25 12:00:00
+thumbnail: "/post-assets/layout/osmani-thumb.jpg"
+banner: "/post-assets/layout/osmani-banner.jpg"
+alternate_banner: True
+banner_attribution: "*Calligraphy in Blue Mosque, Istanbul* Photo by Quinn Dombrowski"
+banner_source: "https://www.flickr.com/photos/quinnanya/5000615343/"
+
+---
+
+I hand crafted some training data for NLP tasks on Turkish with Arabic-script.
+There has been almost nothing done in that area until now.
+<!--more-->
+
+### Motivation
+
+There are millions of documents remain to be discovered from Ottoman times in Turkey.
+They might change the known history. There are not many people who can work on these documents.
+
+It all starts with the decision of migrating to Latin-script back in 1928 by the new established Turkish government.
+Then efforts in this area are crippled : people are forced to forget the Arabic-script.
+ 
+Today it is vice versa : new government encouraging learning the Turkish written in Arabic-script. However, there is too little scientific
+effort in this area.
+
+My project's purpose is to provide some initial training data for the NLP tasks on Turkish in Arabic-script.
+This is just a baby step in this area.
+
+### Document
+
+I chose a document written in Arabic-script and annotated the words in it. Every annotation has the digital Arabic-script and Latin-script Turkish
+word.
+
+Ironically, the [document](http://books.google.ch/books/about/Hakiki_kolay_elifba.html?id=Lwk1PwAACAAJ&redir_esc=y) I chose is the book used in 
+primary schools to teach reading and writing to children.
+
+### Process and technical properties
+ 
+Here is how I proceeded:
+ 1. Convert source document to JPGs
+ 1. Display JPGs and annotate areas
+ 1. Write annotations to a plain text file
+ 
+Annotation is done with a web UI. It is Html canvas where user can select a rectangular area.
+When the area is selected, user types the Arabic-script word and Latin-script word.
+
+I chose storing the data as plain text to have a flat structure. Being flat is really important since you can manually modify the file easily 
+and `diff` is intuitive.
+
+### Result
+
+Training data I prepared is the files in here : <https://github.com/aliok/osmani/tree/master/data/src/main/data/book-annotation>
+
+It has 4741 words in it including the punctuation.
+Around 30% of the words in it are unique.
+
+Project is hosted on [Github](https://github.com/aliok/osmani).
+
+### Future
+
+I hope to work on this subject again in the future. Currently, the [Government Archive Department](http://en.devletarsivleri.gov.tr/) 
+is running a project to digitalize the archives. By that, I mean they're scanning the documents to make them available online.
+
+When that is done, I think we, computer scientists and software engineers, can build a platform to extract data out of them.
