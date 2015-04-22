@@ -5,7 +5,7 @@ date:   2014-10-13 00:38:00
 thumbnail: "/post-assets/layout/turkish-arabic-keyboard-thumb.jpg"
 banner: "/post-assets/layout/turkish-arabic-keyboard-banner.jpg"
 alternate_banner: True
-banner_attribution: "*Tuhfet ül-kibar fi esfar il-bihar* Picture by Paul K"
+banner_attribution: "*Tuhfet ül-kibar fi esfar il-bihar* - Photo by Paul K"
 banner_source: "https://www.flickr.com/photos/bibliodyssey/5986903654/"
 
 ---

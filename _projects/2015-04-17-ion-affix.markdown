@@ -5,7 +5,7 @@ date:   2015-04-17 23:00:00
 thumbnail: "/post-assets/layout/ion-affix-thumb.jpg"
 banner: "/post-assets/layout/ion-affix-banner.jpg"
 alternate_banner: True
-banner_attribution: "*Post it* Picture by Nevit Dilmen"
+banner_attribution: "*Post it* - Picture by Nevit Dilmen"
 banner_source: "http://simple.wikipedia.org/wiki/File:Postit.jpg"
 
 ---

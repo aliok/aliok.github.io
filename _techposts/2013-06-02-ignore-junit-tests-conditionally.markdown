@@ -4,7 +4,7 @@ title:  "Ignore Junit tests conditionally"
 date:   2013-06-02 01:07:43
 banner: "/post-assets/layout/ignore-junit-tests-conditionally.jpg"
 alternate_banner: True
-banner_attribution: "Picture by Popular Science Monthly"
+banner_attribution: "Photo by Popular Science Monthly"
 banner_source: "http://commons.wikimedia.org/wiki/File:PSM_V45_D249_Milk_testing_laboratory_wisconsin_dairy_school.jpg"
 
 ---

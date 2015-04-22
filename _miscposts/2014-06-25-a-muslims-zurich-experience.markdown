@@ -4,7 +4,7 @@ title:  "A Muslim’s Zurich Experience"
 date:   2014-06-25 01:07:43
 banner: "/post-assets/layout/a-muslims-zurich-experience.jpg"
 alternate_banner: True
-banner_attribution: "Picture by Nadf"
+banner_attribution: "Photo by Nadf"
 banner_source: "http://commons.wikimedia.org/wiki/File:Moschee_Wangen_bei_Olten.jpg"
 
 ---

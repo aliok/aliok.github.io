@@ -4,7 +4,7 @@ title:  "Relocated to Zurich"
 date:   2011-05-13 02:00:00
 banner: "/post-assets/layout/relocated-to-zurich-banner.jpg"
 alternate_banner: False
-banner_attribution: "Photo by Xavier Caballé"
+banner_attribution: "*Zurich by night* - Photo by Xavier Caballé"
 banner_source: "http://commons.wikimedia.org/wiki/File:Zurich-night-200312.jpg"
 
 ---

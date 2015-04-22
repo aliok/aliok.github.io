@@ -5,7 +5,7 @@ date:   2014-10-25 12:00:00
 thumbnail: "/post-assets/layout/osmani-thumb.jpg"
 banner: "/post-assets/layout/osmani-banner.jpg"
 alternate_banner: True
-banner_attribution: "*Calligraphy in Blue Mosque, Istanbul* Photo by Quinn Dombrowski"
+banner_attribution: "*Calligraphy in Blue Mosque, Istanbul* - Photo by Quinn Dombrowski"
 banner_source: "https://www.flickr.com/photos/quinnanya/5000615343/"
 
 ---
