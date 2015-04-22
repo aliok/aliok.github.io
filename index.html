@@ -4,73 +4,74 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading-big">
-      Last 4 <a href="{{ 'projects.html' | prepend: site.baseurl }}">projects</a>
-  </h1>
-
-  <div class="project-list">
-    {% assign sorted_posts = (site.projects | sort: 'date') | reverse %}
-    {% for post in sorted_posts limit:4 %}
-      {% assign mod = forloop.index0 | modulo:2 %}
-      {% if mod == 0 %}
-      <div class="row">
-      {% endif %}
-        <div class="span6">
-          <div class="project-list-item">
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
-            <div class="project-thumbnail" style="background-image: url('{{ post.thumbnail | prepend: site.baseurl }}');" ></div>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-
-            <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
-            <span class="project-summary">{{ post.content | split:'<!--more-->' | first }}</span>
-          </div>
-        </div>
-      {% if mod == 1 %}
-        </div>
-      {% endif %}
-
-    {% endfor %}
-
-    {% assign project_count = site.projects | size %}
-    {% if project_count < 4 %}
-      {% assign mod = project_count | modulo:2 %}
-      {% if mod == 1 %}
-        <!--if project count is 1 or 3, we need to add another span and end the row-->
-        <div class="span6"></div>
-        </div>
-      {% endif %}
-    {% endif %}
-  </div>
-
-    <h1 class="page-heading-middle">
-        Older <a href="{{ 'projects.html' | prepend: site.baseurl }}">projects</a>
+    <h1 class="page-heading-big">
+        Last 4 <a href="{{ 'projects.html' | prepend: site.baseurl }}">projects</a>
     </h1>
 
-  <div class="project-list subdued">
-      {% assign sorted_posts = (site.projects | sort: 'date') | reverse %}
-      {% for post in sorted_posts offset:4 %}
-          <div class="row">
-              <div class="span12">
-                  <div class="row project-list-item">
-                      <div class="span3">
-                          <div class="project-thumbnail" style="background-image: url('{{ post.thumbnail | prepend: site.baseurl }}');" ></div>
-                      </div>
-                      <div class="span9">
-                          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
-                          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <div class="project-list">
+        {% assign sorted_posts = (site.projects | sort: 'date') | reverse %}
+        {% for post in sorted_posts limit:4 %}
+        {% assign mod = forloop.index0 | modulo:2 %}
+        {% if mod == 0 %}
+        <div class="row">
+            {% endif %}
+            <div class="span6">
+                <div class="project-list-item">
+                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
 
-                          <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
-                          <span class="project-summary">{{ post.content | split:'<!--more-->' | first }}</span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      {% endfor %}
-  </div>
+                    <div class="project-thumbnail" style="background-image: url('{{ post.thumbnail | prepend: site.baseurl }}');"></div>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 
-  <div class="big-link-wrapper">
+                    <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
+                    <span class="project-summary">{{ post.content | split:'<!--more-->' | first }}</span>
+                </div>
+            </div>
+            {% if mod == 1 %}
+        </div>
+        {% endif %}
+
+        {% endfor %}
+
+        {% assign project_count = site.projects | size %}
+        {% if project_count < 4 %}
+        {% assign mod = project_count | modulo:2 %}
+        {% if mod == 1 %}
+        <!--if project count is 1 or 3, we need to add another span and end the row-->
+        <div class="span6"></div>
+    </div>
+    {% endif %}
+    {% endif %}
+</div>
+
+<h1 class="page-heading-middle">
+    Older <a href="{{ 'projects.html' | prepend: site.baseurl }}">projects</a>
+</h1>
+
+<div class="project-list subdued">
+    {% assign sorted_posts = (site.projects | sort: 'date') | reverse %}
+    {% for post in sorted_posts offset:4 %}
+    <div class="row">
+        <div class="span12">
+            <div class="row project-list-item">
+                <div class="span3">
+                    <div class="project-thumbnail" style="background-image: url('{{ post.thumbnail | prepend: site.baseurl }}');"></div>
+                </div>
+                <div class="span9">
+                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+
+                    <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
+                    <span class="project-summary">{{ post.content | split:'<!--more-->' | first }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="big-link-wrapper">
     <a class="big-link" href="{{ 'projects.html' | prepend: site.baseurl }}">See more of my projects</a>
-  </div>
+</div>
 
 </div>
 
@@ -106,29 +107,29 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading-big">
-      Last 4 <a href="{{ 'miscposts.html' | prepend: site.baseurl }}"> misc posts</a>
-  </h1>
+    <h1 class="page-heading-big">
+        Last 4 <a href="{{ 'miscposts.html' | prepend: site.baseurl }}"> misc posts</a>
+    </h1>
 
-  <div class="misc-list">
-    {% assign sorted_posts = (site.miscposts | sort: 'date') | reverse %}
-    {% for post in sorted_posts limit:4 %}
-      <div class="row">
-        <div class="span12">
-          <div class="misc-list-item">
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <div class="misc-list">
+        {% assign sorted_posts = (site.miscposts | sort: 'date') | reverse %}
+        {% for post in sorted_posts limit:4 %}
+        <div class="row">
+            <div class="span12">
+                <div class="misc-list-item">
+                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 
-            <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
-            <span class="misc-summary">{{ post.content | split:'<!--more-->' | first }}</span>
-          </div>
+                    <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
+                    <span class="misc-summary">{{ post.content | split:'<!--more-->' | first }}</span>
+                </div>
+            </div>
         </div>
-      </div>
-    {% endfor %}
-  </div>
+        {% endfor %}
+    </div>
 
-  <div class="big-link-wrapper">
-    <a class="big-link" href="{{ 'miscposts.html' | prepend: site.baseurl }}">See more misc</a>
-  </div>
+    <div class="big-link-wrapper">
+        <a class="big-link" href="{{ 'miscposts.html' | prepend: site.baseurl }}">See more misc</a>
+    </div>
 
 </div>

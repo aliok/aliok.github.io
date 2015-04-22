@@ -4,23 +4,23 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading-big">Tech Posts</h1>
+    <h1 class="page-heading-big">Tech Posts</h1>
 
-  <div class="misc-list">
-      {% assign sorted_posts = (site.techposts | sort: 'date') %}
-      {% for post in sorted_posts reversed %}
-      <div class="row">
-        <div class="span12">
-          <div class="misc-list-item">
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <div class="misc-list">
+        {% assign sorted_posts = (site.techposts | sort: 'date') %}
+        {% for post in sorted_posts reversed %}
+        <div class="row">
+            <div class="span12">
+                <div class="misc-list-item">
+                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 
-            <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
-            <span class="misc-summary">{{ post.content | split:'<!--more-->' | first }}</span>
-          </div>
+                    <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
+                    <span class="misc-summary">{{ post.content | split:'<!--more-->' | first }}</span>
+                </div>
+            </div>
         </div>
-      </div>
-    {% endfor %}
-  </div>
+        {% endfor %}
+    </div>
 
 </div>

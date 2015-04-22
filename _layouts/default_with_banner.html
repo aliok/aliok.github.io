@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+{% include head.html %}
 
-  {% if page.alternate_banner %}
-  <body class="with-banner alternate">
-  {% else %}
-  <body class="with-banner">
-  {% endif %}
+{% if page.alternate_banner %}
+<body class="with-banner alternate">
+{% else %}
+<body class="with-banner">
+{% endif %}
 
-    {% include header.html %}
+{% include header.html %}
 
-    <div class="post-banner" style="background-image: url('{{ page.banner | prepend: site.baseurl }}');" ></div>
+<div class="post-banner" style="background-image: url('{{ page.banner | prepend: site.baseurl }}');"></div>
 
-    {% if page.banner_attribution %}
-    <div class="banner-attribution">
-        <a href="{{ page.banner_source }}">{{ page.banner_attribution | markdownify }}</a>
-    </div>
-    {% endif %}
+{% if page.banner_attribution %}
+<div class="banner-attribution">
+    <a href="{{ page.banner_source }}">{{ page.banner_attribution | markdownify }}</a>
+</div>
+{% endif %}
 
-    <div class="page-content">
-      <div class="wrapper full">
+<div class="page-content">
+    <div class="wrapper full">
         <div class="primary">
-          {{ content }}
+            {{ content }}
 
-          {% include disqus.html %}
+            {% include disqus.html %}
         </div>
 
         {% include aside.html %}
-      </div>
     </div>
+</div>
 
-    {% include footer.html %}
+{% include footer.html %}
 
-  </body>
+</body>
 
-  {% include google-analytics.html %}
+{% include google-analytics.html %}
 
 </html>
