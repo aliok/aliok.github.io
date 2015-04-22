@@ -48,7 +48,7 @@ layout: default
 
   <div class="project-list subdued">
       {% assign sorted_posts = (site.projects | sort: 'date') | reverse %}
-      {% for post in sorted_posts offset:1 %}
+      {% for post in sorted_posts offset:4 %}
           <div class="row">
               <div class="span12">
                   <div class="row project-list-item">
