@@ -20,6 +20,6 @@ collections:
   miscposts:
     output: true
   techposts:
-      output: true
+    output: true
   drafts:
-      output: true
+    output: true
