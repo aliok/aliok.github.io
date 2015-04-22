@@ -4,21 +4,21 @@
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /**
  * Basic styling
  */
 body {
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  font-weight: $base-font-weight;
-  color: $text-color;
-  background-color: $background-color;
-  -webkit-text-size-adjust: 100%;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: $base-font-weight;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
 }
 
 /**
@@ -28,84 +28,84 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit / 2;
+    margin-bottom: $spacing-unit / 2;
 }
 
 /**
  * Images
  */
 img {
-  max-width: 100%;
-  vertical-align: middle;
+    max-width: 100%;
+    vertical-align: middle;
 }
 
 /**
  * Figures
  */
 figure > img {
-  display: block;
+    display: block;
 }
 
 figcaption {
-  font-size: $small-font-size;
+    font-size: $small-font-size;
 }
 
 /**
  * Lists
  */
 ul, ol {
-  margin-left: $spacing-unit;
+    margin-left: $spacing-unit;
 }
 
 li {
-  > ul,
-  > ol {
-    margin-bottom: 0;
-  }
+    > ul,
+    > ol {
+        margin-bottom: 0;
+    }
 }
 
 /**
  * Headings
  */
 h1 {
-  font-weight: $base-font-weight;
+    font-weight: $base-font-weight;
 }
 
 h2, h3, h4, h5, h6 {
-  font-weight: $base-font-weight-bold;
+    font-weight: $base-font-weight-bold;
 }
 
 /**
  * Links
  */
 a {
-  color: $brand-color;
-  text-decoration: none;
+    color: $brand-color;
+    text-decoration: none;
 
-  &:visited {
-    color: darken($brand-color, 15%);
-  }
+    &:visited {
+        color: darken($brand-color, 15%);
+    }
 
-  &:hover {
-    color: $text-color;
-    text-decoration: underline;
-  }
+    &:hover {
+        color: $text-color;
+        text-decoration: underline;
+    }
 }
 
 /**
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
-  padding-left: $spacing-unit / 2;
-  font-size: 18px;
-  letter-spacing: -1px;
-  font-style: italic;
+    color: $grey-color;
+    border-left: 4px solid $grey-color-light;
+    padding-left: $spacing-unit / 2;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
 
-  > :last-child {
-    margin-bottom: 0;
-  }
+    > :last-child {
+        margin-bottom: 0;
+    }
 }
 
 /**
@@ -113,45 +113,45 @@ blockquote {
  */
 pre,
 code {
-  font-size: 15px;
-  border: 1px solid $grey-color-light;
-  border-radius: 3px;
-  background-color: #eef;
+    font-size: 15px;
+    border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    background-color: #eef;
 }
 
 code {
-  padding: 1px 5px;
+    padding: 1px 5px;
 }
 
 pre {
-  padding: 8px 12px;
-  overflow-x: scroll;
+    padding: 8px 12px;
+    overflow-x: scroll;
 
-  > code {
-    border: 0;
-    padding-right: 0;
-    padding-left: 0;
-  }
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 
 /**
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(#{$laptop-site-width} - (#{$spacing-unit} * 2));
-  max-width: calc(#{$laptop-site-width} - (#{$spacing-unit} * 2));
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
-  @extend %clearfix;
+    max-width: -webkit-calc(#{$laptop-site-width} - (#{$spacing-unit} * 2));
+    max-width: calc(#{$laptop-site-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
 
-  @include media-query($on-laptop) {
-    max-width: -webkit-calc(#{$laptop-site-width} - (#{$spacing-unit}));
-    max-width: calc(#{$laptop-site-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-  }
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$laptop-site-width} - (#{$spacing-unit}));
+        max-width: calc(#{$laptop-site-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
 }
 
 /**
@@ -159,11 +159,11 @@ pre {
  */
 %clearfix {
 
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
 
 /**
@@ -171,96 +171,95 @@ pre {
  */
 .icon {
 
-  > svg {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
 
-    path {
-      fill: $grey-color;
+        path {
+            fill: $grey-color;
+        }
     }
-  }
 }
 
 /**
  * Based from Bootstrap .label
 */
 .big-link-wrapper {
-  display: block;
-  text-align: center;
-  margin-bottom: $spacing-unit * 2;
+    display: block;
+    text-align: center;
+    margin-bottom: $spacing-unit * 2;
 }
 
 .big-link {
-  display: inline;
-  padding: .2em .6em .3em;
-  font-size: 150%;
-  font-weight: 700;
-  line-height: 1;
-  color: #fff;
-  background-color: lighten($brand-color, 10%);
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: .25em;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 150%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    background-color: lighten($brand-color, 10%);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
 
-  &:visited {
-    color: #fff;
-    background-color: lighten($brand-color, 10%);
-  }
-  &:hover {
-    color: #fff;
-    background-color: lighten($brand-color, 10%);
-  }
+    &:visited {
+        color: #fff;
+        background-color: lighten($brand-color, 10%);
+    }
+    &:hover {
+        color: #fff;
+        background-color: lighten($brand-color, 10%);
+    }
 }
 
 /** Based from Bootstrap dl-horizontal **/
 dl {
-  margin-top: 0;
-  margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 dt, dd {
-  line-height: 1.5;
+    line-height: 1.5;
 }
 
 dt {
-  float: left;
-  width: 160px;
-  overflow: hidden;
-  clear: left;
-  text-align: right;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-weight: 500;
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
 }
 
 dd {
-  margin-left: 180px;
+    margin-left: 180px;
 }
 
 @include media-query($on-palm) {
-  dt {
-    float: initial;
-    width: initial;
-    overflow: initial;
-    clear: initial;
-    text-align: initial;
-    text-overflow: initial;
-    white-space: initial;
-  }
+    dt {
+        float: initial;
+        width: initial;
+        overflow: initial;
+        clear: initial;
+        text-align: initial;
+        text-overflow: initial;
+        white-space: initial;
+    }
 
-  dd {
-    margin-left: initial;
-  }
+    dd {
+        margin-left: initial;
+    }
 }
 
-
 //make CodePen demos narrower
-.codepen-mobile{
-  iframe[src*="codepen.io"] {
-    //height must be passed to embed code!
-    width: 320px !important;
-  }
+.codepen-mobile {
+    iframe[src*="codepen.io"] {
+        //height must be passed to embed code!
+        width: 320px !important;
+    }
 }

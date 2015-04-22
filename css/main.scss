@@ -1,34 +1,31 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+//# Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
-
-
 
 // Our variables
 $base-font-family: 'Open Sans', Geneva, Helvetica, Arial, 'Lucida Sans', sans-serif;
 $base-font-weight: 300;
 $base-font-weight-bold: 400;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
+$base-font-size: 16px;
+$small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.5;
 
+$spacing-unit: 30px;
 
-$spacing-unit:     30px;
-
-$text-color:       #060606;
+$text-color: #060606;
 $background-color: #fafafa;
-$brand-color:      #2a7ae2;
+$brand-color: #2a7ae2;
 
-$grey-color:       #828282;
+$grey-color: #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-lighter: lighten($grey-color, 45%);
 $grey-color-darkish: darken($grey-color, 10%);
-$grey-color-dark:  darken($grey-color, 25%);
+$grey-color-dark: darken($grey-color, 25%);
 
-$on-palm:          600px;
-$on-laptop:        800px;
-$laptop-site-width:800px;
+$on-palm: 600px;
+$on-laptop: 800px;
+$laptop-site-width: 800px;
 
 /* Columns will stack on screens less than this wide. */
 $stack-width: 600px;
@@ -46,14 +43,11 @@ $stack-width: 600px;
     }
 }
 
-
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting",
-        "fluid"
-;
+@import "base",
+"layout",
+"syntax-highlighting",
+"fluid";
 
 // checked font-weight values used. 300 and 400 are the only ones (except code blocks).
 // 600 is there for future use.
