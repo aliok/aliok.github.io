@@ -12,6 +12,8 @@ banner_source: "http://commons.wikimedia.org/wiki/File:Bloc_de_nots.jpg"
 Yesterday I've seen another example of Oracle messing up Java and Java standards. This time, it was [Tyrus](https://tyrus.java.net/).
 <!--more-->
 
+**tl;dr : You won't be able to use Tyrus on Openshift because Tyrus is a piece of crap!**
+
 In a recent project of mine I needed to use Websockets. To experiment with things about latency on Openshift, I created
 a [small application](https://github.com/aliok/packet-latency-experiments) where server echoes what it receives and client computes the latency.
 
@@ -38,10 +40,13 @@ Well, it explains why I was never successful with deploying to Openshift. I had 
 
 ~~~~~~
 
+What does Tyrus have to do with Java? Well, it is reference implementation of a Java Specification.
 
 Well, good old days are behind where a reference implementation of a JSR actually works and good for POCs even though it is not the best choice for production usages.
 
-Shame on you Oracle for fucking up Java! 
+We have seen lots of other examples. Mojarra is another RI which became horseshit after Oracle.
+
+Shame on you Oracle for fucking up Java, again! 
 
 
 Have I reported the problem? No I haven't. I won't even bother reporting to this horrible project.
