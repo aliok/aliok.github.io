@@ -1,0 +1,199 @@
+---
+layout: post
+title:  "Ramboli - a 2D MMO game"
+date:   2015-10-20 12:00:00
+thumbnail: "/post-assets/layout/ramboli-01-thumb.png"
+banner: "/post-assets/layout/ramboli-01-banner.png"
+alternate_banner: True
+banner_attribution: "*Ramboli - Initial Sketch*"
+banner_source: ""
+
+---
+
+Ramboli is a 2D MMO game for browser, iOS and Android. It is currently in active development.
+I will share some insights about what it takes to build a game like that.
+<!--more-->
+
+### Status
+
+The game is not open to anyone yet. So, I cannot give information about the game play etc.
+
+What I want to share here is the technical aspects of building such a game.
+
+### Overall architecture
+
+Here is the simplified overview:
+
+* A game server which accepts Websocket connections
+* A browser-based game client which connects to the game server with Websockets
+* A game proxy server, which tells clients to connect given Websocket URL
+* A game console application for creating an account to collect points, customizing the character, creating maps etc.
+  * REST backend
+  * Browser client
+* A NoSQL DB to store user accounts, character customizations, scores etc.
+
+
+I skip the Android and iOS parts.
+
+Clients ask game proxy server for a game server. This is required to pick physically closest and least loaded server available.
+  
+Clients connect to given game server URL over websocket. Game server is an authoritative one. No place for cheaters...
+
+Every command needs to go to server. In this game, `lag compensation` doesn't make sense since 
+bullets don't have infinite speed (
+[link 1](https://developer.valvesoftware.com/wiki/Lag_compensation),
+[link 2](http://gamedev.stackexchange.com/questions/105190/lag-compensation-in-rocket-game-context)
+).
+That means, latency is very important.
+
+Game console application is standing somewhere else. Users can customize their characters and create maps.
+Trophies, scores etc. are also shown there. Backend of this application is a Node application. Everything
+is done over REST calls. 
+
+Real REST calls... no state at all; no sticky sessions... That is the way to scale. The load balancer in front is 
+just redirecting the calls to one of the Node instances. Node instances scale horizontally depending on load.
+                                                                    
+
+**Complex diagram (I know you love complexity!):**
+
+
+![Screenshot](/post-assets/ramboli-01-system-landscape.png)
+
+
+
+### Latency
+
+As mentioned above, without lag compensation, latency is the most important problem we face. We have to have servers in 
+different geographic regions. The closer the server is, the shorter the latency is. 
+
+Let's ignore the things like routers' overhead and slow cables, we will still have latency because of speed of light.
+Assume Switzerland to US east coast is 4000 kilometers. That means, if we have a single cable which we send some data over,
+it will take `4000 km/ 300K km/s` = `0.013 seconds` = `13 ms`. With the overhead of rerouting, real-world cables that 
+don't actually send electricity with a speed of 300K km/s and some other things, this one way latency is roughly 100 ms.
+
+And, think about the round trip...
+ 
+* Client sends a command, *move right*
+* It takes 100 ms to reach the server
+* Server processes things, say for 15 ms
+* Server sends a response, 100 ms again.
+
+Client will see its character moving to the right in 200 ms. That is noticable...
+
+To overcome this problem we need 2 things:
+
+1. Client prediction: Not gonna go into details here. Complicated subject. Read [this](http://www.gabrielgambetta.com/fpm2.html) article.
+2. Low latency: We have to have servers geographically distributed.
+
+[Amazon](http://aws.amazon.com/) (expensive option) and [Linode](http://linode.com/) already gives us the option to have our servers
+in different regions of the world.
+
+And this is the reason that we have a proxy that distributes users to servers.
+
+### Traffic out - terabytes?
+
+Imagine there are 1000 concurrent users anytime in the game. Assuming every room has 32 players, that means:
+
+* For each delta update, we have to send the positions of everyone to other players in the room.
+  * Let's skip the other information that is sent, like rotation, health, remaining ammo etc.
+  * Let's also ignore the overhead.
+  * That would make 2 floats == `8 bytes`
+  * Traffic out to each client with each broadcast : `8 bytes` * `32 players` = `256 bytes`
+  
+* We send the updates every 15 ms to make the game smooth, as we aren't using `lag compensation`(
+  [link 1](https://developer.valvesoftware.com/wiki/Lag_compensation),
+  [link 2](http://gamedev.stackexchange.com/questions/105190/lag-compensation-in-rocket-game-context);
+  it doesn't make sense actually since bullets don't have infinite speed in this game).
+  * That makes `1000 ms` / `15 ms` * `256 bytes` = `16.6 KB/s` traffic out to each client.
+  * We have 1000 clients. So, total traffic out is `1000 clients` * `16.6 KB/s` ~= `16 MB/s` traffic out from the game in total
+  
+* Over 1 month, what would be the total traffic out?
+  * `1 month` = `30*24*3600 seconds`
+  * Total traffic out per month = `30*24*3600 seconds` * `16 MB/s` ~= `40 TB/months`
+
+**40** TB! Just sending 2 floats!
+
+In AWS, 1 TB traffic out is *$90*. That would make *$3600/month*. That is already too much. Now, think about the overhead, other things 
+that we need to send, etc. That would easily become *$10000/month*.
+
+Even the optimal situation is that costly. We need to find a way to make it as close to that as possible. JSON is not an option.
+
+~~
+
+So, I now cut the crap and come to the point: **We had to optimize the communication as much as possible!**
+
+During initial POCs, we were using JSON as we thought it is easy to debug. But, even then, locally I was getting 20 MB\s.
+
+Answer: [Protocol Buffers](https://developers.google.com/protocol-buffers/).
+
+It is adding so little overhead; it is available in multiple platforms; it is fast. There are lots of other alternatives
+like [Apache Thrift](https://thrift.apache.org/), but the 3rd party support is great in ProtoBuf. 
+
+There is an A+ grade [Javascript client](https://github.com/dcodeIO/ProtoBuf.js/). 
+
+Typescript support was there, but not very well written. I had to [rewrite it](https://github.com/aliok/Proto2TypeScript). 
+
+
+
+
+### IaaS - still expensive
+
+In [AWS](http://aws.amazon.com/), 1 TB costs $90. That is still very expensive when your application is this much data intensive.
+
+[Linode](http://linode.com/) is a much better alternative. There the calculation is a bit more complicated, but 1 TB costs ~ $10.
+They have an API, they have good support etc.
+
+
+### Summary : stack
+
+* Game server - written in Java:
+  * [Undertow by JBoss](http://undertow.io/)
+  * [Protocol Buffers](https://developers.google.com/protocol-buffers/)
+  * Standard things like Apache Commons stuff, JDK stuff
+
+<p></p>
+
+* Browser client - written in Typescript:
+  * [CreateJS](http://createjs.com/)
+  * Standard Websockets
+  * Collections like [Quadtree-js](https://github.com/timohausmann/quadtree-js/), etc.
+  * Utilities like [Underscore](http://underscorejs.org/), [jQuery](https://jquery.com/)
+  * Tools: Typescript, Gulp, [Proto2TypeScript](https://github.com/aliok/Proto2TypeScript)
+
+<p></p>
+   
+* Game console backend - written in Javascript:
+  * [Node](https://nodejs.org)
+  * [Express](http://expressjs.com/)
+  * JSON web tokens via [Bcrypt](https://github.com/ncb000gt/node.bcrypt.js)
+  * [MongoDB](https://www.mongodb.org/) via [Mongoose](http://mongoosejs.com/)
+  * [Node-canvas](https://github.com/Automattic/node-canvas) -- to prepare the character mask images on the server side 
+  
+<p></p>
+  
+* Game console frontend - written in Javascript:
+  * [Angular](https://angularjs.org/)
+  * [Semantic UI](http://semantic-ui.com/)
+  * [CreateJS](http://createjs.com/)
+  * Utilities like [Underscore](http://underscorejs.org/), [jQuery](https://jquery.com/)
+  * Tools: Gulp, etc.
+  
+  
+
+### Game development community
+
+Before starting with the idea, we didn't know anything about game development community.
+
+TL;DR: It is huge! And everyone is enthusiastic!
+
+Since it includes math, networking, fun factors and lots of other stuff, people share their knowledge more often
+than plain old business application programmers. That was a surprise for me.
+
+Awesome resources:
+
+* [What every programmer needs to know about game networking](http://gafferongames.com/networking-for-game-programmers/what-every-programmer-needs-to-know-about-game-networking/)
+* [Fast-Paced Multiplayer](http://www.gabrielgambetta.com/fast_paced_multiplayer.html)
+
+and of course... the masterpiece:
+
+* [Source Multiplayer Networking](https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking) 
