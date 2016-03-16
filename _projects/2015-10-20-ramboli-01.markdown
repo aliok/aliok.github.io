@@ -24,6 +24,8 @@ The game is not open to anyone yet. So, I cannot give information about the game
 
 What I want to share here is the technical aspects of building such a game.
 
+*UPDATE: I made character customization backend open source. See <https://github.com/aliok/rambo-li-char-customization-backend>*
+
 ### Overall architecture
 
 Here is the simplified overview:
