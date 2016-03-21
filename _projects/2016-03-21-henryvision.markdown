@@ -16,7 +16,7 @@ You take a photo and the mobile application tells you what it is.
 
 ### Status
 
-Here is a short demo:
+Here is a short video:
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/npUtwnmuKEQ" frameborder="0" allowfullscreen></iframe>
 
