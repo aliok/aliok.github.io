@@ -10,7 +10,7 @@ banner_source: "https://www.flickr.com/photos/cpstorm/167418602"
 
 ---
 
-A demo with Red Hat Mobile Application Platform, Google Cloud Vision API.
+A demo with Red Hat Mobile Application Platform and Google Cloud Vision API.
 You take a photo and the mobile application tells you what it is.
 <!--more-->
 
