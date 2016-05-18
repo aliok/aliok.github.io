@@ -68,12 +68,10 @@ This is an Ionic/Cordova app. Uses the cloud app described above.
 It was pretty easy to do all these things. RHMAP didn't make my day harder at all.
 It is a very good integration what they provide.
 
-If you would like to give it a try, here is a link for you:
+~~If you would like to give it a try, here is a link for you:~~
+~~<http://red.ht/25fr7sx>~~
+~~OR~~
+~~![qrCode](/post-assets/henryvision-qrcode.png)~~
+~~(only Android!)~~
 
-<http://red.ht/25fr7sx>
-
-OR
-
-![qrCode](/post-assets/henryvision-qrcode.png)
-
-(only Android!)
+*Update: I removed all the cloud apps on RHMAP and Google Cloud.*
