@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 
 collections:
   projects:
