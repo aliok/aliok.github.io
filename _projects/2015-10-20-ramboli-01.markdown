@@ -2,8 +2,8 @@
 layout: post
 title:  "Ramboli - a 2D MMO game"
 date:   2015-10-20 12:00:00
-thumbnail: "/post-assets/layout/ramboli-01-thumb.png"
-banner: "/post-assets/layout/ramboli-01-banner.png"
+thumbnail: "/post-assets/layout/ramboli-01-thumb.jpg"
+banner: "/post-assets/layout/ramboli-01-banner.jpg"
 alternate_banner: True
 banner_attribution: "*Ramboli - Initial Sketch*"
 banner_source: ""

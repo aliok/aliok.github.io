@@ -2,7 +2,7 @@
 layout: post
 title:  "Google Summer of Code - Final"
 date:   2010-08-15 00:00:00
-banner: "/post-assets/layout/gsoc-final.png"
+banner: "/post-assets/layout/gsoc-final.jpg"
 alternate_banner: True
 banner_attribution: "Official logo of GSoC 2010"
 banner_source: "https://code.google.com/p/google-summer-of-code/downloads/detail?name=2010_950x846px.png&can=2&q="

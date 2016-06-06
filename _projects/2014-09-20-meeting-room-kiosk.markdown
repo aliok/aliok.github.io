@@ -2,8 +2,8 @@
 layout: post
 title:  "Meeting room kiosk"
 date:   2014-09-20 00:38:00
-thumbnail: "/post-assets/layout/meeting-room-kiosk-thumb.png"
-banner: "/post-assets/layout/meeting-room-kiosk-banner.png"
+thumbnail: "/post-assets/layout/meeting-room-kiosk-thumb.jpg"
+banner: "/post-assets/layout/meeting-room-kiosk-banner.jpg"
 alternate_banner: True
 banner_attribution: "*Sketch of sensor box during ergo-design*"
 banner_source: "#"

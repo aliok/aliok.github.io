@@ -17,7 +17,7 @@ This post is about a poem of Nef”i who lived in 17th century Istanbul. Even if
 
 ### Nef’i’nin bahar kasidesinin eski alfabe ile yazılışı (ilk 4 beyti)
 
-![Screenshot](/post-assets/nefi-bahar-kasidesi-el-yazmasi.png)
+![Screenshot](/post-assets/nefi-bahar-kasidesi-el-yazmasi.jpg)
 
 Osmanlıcasını -veya eski Türkçesini diyelim- Farsça ve Arapça sözlüklerden buldum:
 
