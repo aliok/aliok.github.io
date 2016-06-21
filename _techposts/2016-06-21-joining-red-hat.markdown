@@ -13,7 +13,7 @@ August 1st 2016 will be my first day at Red Hat!
 
 <!--more-->
 
-As I wrote in [my relocation to Istanbul](2016-06-07-relocating-back-to-istanbul.html), I start a new
+As I wrote in [my relocation to Istanbul](/miscposts/2016-06-07-relocating-back-to-istanbul.html), I start a new
 job in Istanbul.
 
 I will join Red Hat mobile team. I will work on
