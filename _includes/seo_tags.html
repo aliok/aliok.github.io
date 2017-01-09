@@ -1,0 +1,157 @@
+<!--Some general meta tags and SEO related meta tags.-->
+<!-- see http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/ -->
+<!-- see http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/ -->
+
+{% if page.url == "/" %}
+    {% assign homepage = true %}
+{% endif %}
+
+<!--if there is metaDescription defined, use it. if not, try to extract the page excerpt. if-->
+<!--that doesn't exist, just use the general description.-->
+{% assign seo_description = page.metaDescription | default: page.excerpt | default: site.description | smartify | strip_html | normalize_whitespace | escape_once | truncate: 160 %}
+
+
+<!--we show large image card if there is a banner image-->
+{% if page.banner %}
+    {% assign seo_image = page.banner | prepend: site.baseurl | prepend: site.url %}
+{% else %}
+    {% assign seo_image = '/post-assets/profile_circle_975_sepia.png' | prepend: site.baseurl | prepend: site.url %}
+{% endif %}
+
+
+{% if page.url %}
+    {% assign seo_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
+{% endif %}
+
+{% if homepage %}
+    {% assign seo_title = site.title | escape %}
+{% elsif page.title %}
+    {% assign seo_title = page.title | prepend: " | " | prepend:site.title | escape %}
+{% else %}
+    {% assign seo_title = site.title | escape %}
+{% endif %}
+
+{% if homepage %}
+    {% assign seo_page_title = site.title | escape %}
+{% elsif page.title %}
+    {% assign seo_page_title = page.title | escape %}
+{% else %}
+    {% assign seo_page_title = site.title | escape %}
+{% endif %}
+
+
+<!--specific to Google-->
+{% if homepage %}
+    {% assign seo_type = "WebSite" %}
+{% elsif page.date %}
+    {% assign seo_type = "NewsArticle" %}
+{% else %}
+    {% assign seo_type = "Article" %}
+{% endif %}
+
+
+{% if page.banner %}
+<meta name="twitter:card" content="summary_large_image">
+{% else %}
+<meta name="twitter:card" content="summary">
+{% endif %}
+
+<meta name="twitter:site" content="@aliok_tr">
+<meta name="twitter:creator" content="@aliok_tr">
+<meta property="article:publisher" content="{{ site.url }}/about/" />
+
+<meta content="{{ site.title }}" property="og:site_name">
+<meta content="{{ site.url }}/about/" property="article:author">
+
+{% if page.date %}
+<meta property="og:type" content="article" />
+<meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+{% endif %}
+
+{% if seo_title %}
+<title>{{ seo_title }}</title>
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta property="og:title"  content="{{ seo_title }}">
+{% endif %}
+
+{% if seo_url %}
+<meta name="twitter:url" content="{{ seo_url }}">
+<link rel="canonical"       href="{{ seo_url }}">
+<meta property="og:url"  content="{{ seo_url }}">
+{% endif %}
+
+<meta name="twitter:description" content="{{ seo_description }}">
+<meta name="description"         content="{{ seo_description }}">
+<meta property="og:description"  content="{{ seo_description }}">
+
+<meta name="twitter:image" content="{{ seo_image }}">
+<meta property="og:image"  content="{{ seo_image }}">
+
+
+{% assign seo_site_title = site.title | default: site.name %}
+
+{% if page.title %}
+    {% assign seo_title = page.title %}
+
+    {% if seo_site_title %}
+        {% assign seo_title = seo_title | append:" - " | append: seo_site_title %}
+    {% endif %}
+{% elsif seo_site_title %}
+    {% assign seo_title = seo_site_title %}
+
+    {% if site.description %}
+        {% assign seo_title = seo_title | append:" - " | append: site.description %}
+    {% endif %}
+{% endif %}
+
+{% if seo_title %}
+    {% assign seo_title = seo_title | smartify | strip_html | normalize_whitespace | escape_once %}
+{% endif %}
+
+{% if seo_site_title %}
+    {% assign seo_site_title = seo_site_title | smartify | strip_html | normalize_whitespace | escape_once %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+
+{% if seo_type %}
+    "@type": {{ seo_type | jsonify }},
+{% endif %}
+
+{% if seo_page_title %}
+    "name": {{ seo_page_title | jsonify }},
+    "headline": {{ seo_page_title | jsonify }},
+{% endif %}
+
+{% if seo_image %}
+    "image": {
+        "@type": "ImageObject",
+        "url": {{ seo_image | jsonify }}
+    },
+{% endif %}
+
+{% if page.date %}
+    "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+{% endif %}
+
+{% if seo_url %}
+    "url": {{ seo_url | jsonify }},
+{% endif %}
+
+    "description": {{ seo_description | jsonify }},
+
+    // let's have this anyway
+    "publisher": {
+        "@type": "Person",
+        "name": "Ali Ok",
+    },
+
+    // let's have this anyway
+    "author": {
+        "@type": "Person",
+        "name": "Ali Ok"
+    }
+}
+</script>
