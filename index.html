@@ -1,135 +1,127 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
 
-<div class="home">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <h1 class="page-heading-big">
-        Last 4 <a href="{{ 'projects.html' | prepend: site.baseurl }}">projects</a>
-    </h1>
+    <meta name="twitter:card" content="summary">
 
-    <div class="project-list">
-        {% assign sorted_posts = (site.projects | sort: 'date') | reverse %}
-        {% for post in sorted_posts limit:4 %}
-        {% assign mod = forloop.index0 | modulo:2 %}
-        {% if mod == 0 %}
-        <div class="row">
-            {% endif %}
-            <div class="span6">
-                <div class="project-list-item">
-                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
+    <meta name="twitter:site" content="@aliok_tr">
+    <meta name="twitter:creator" content="@aliok_tr">
+    <meta property="article:publisher" content="https://aliok.com.tr" />
 
-                    <div class="project-thumbnail" style="background-image: url('{{ post.thumbnail | prepend: site.baseurl }}');"></div>
-                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <meta content="Ali Ok" property="og:site_name">
+    <meta content="https://aliok.com.tr" property="article:author">
 
-                    <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
-                    <span class="project-summary">{{ post.content | split:'<!--more-->' | first }}</span>
+    <title>Ali Ok</title>
+    <meta name="twitter:title" content="Ali Ok">
+    <meta property="og:title"  content="Ali Ok">
+
+
+
+    <meta name="twitter:url" content="https://aliok.com.tr">
+    <link rel="canonical"       href="https://aliok.com.tr">
+    <meta property="og:url"  content="https://aliok.com.tr">
+
+
+    <meta name="twitter:description" content="Ali Ok">
+    <meta name="description"         content="Ali Ok">
+    <meta property="og:description"  content="Ali Ok">
+
+    <meta name="twitter:image" content="http://aliok.github.io/post-assets/profile_circle_975_sepia.png">
+    <meta property="og:image"  content="http://aliok.github.io/post-assets/profile_circle_975_sepia.png">
+
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "Ali Ok",
+            "headline": "Ali Ok",
+            "image": {
+                "@type": "ImageObject",
+                "url": "http://aliok.github.io/post-assets/profile_circle_975_sepia.png"
+            },
+            "url": "https://aliok.com.tr/",
+            "description": "Ali Ok",
+            // let's have this anyway
+            "publisher": {
+                "@type": "Person",
+                "name": "Ali Ok",
+            },
+            // let's have this anyway
+            "author": {
+                "@type": "Person",
+                "name": "Ali Ok"
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href='/css/main.css'>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5641530853515663",
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+
+
+<body>
+
+
+<div class="page-content">
+    <div class="wrapper full">
+        <div class="primary">
+            <div class="home">
+
+                <div style="text-align: center; font-size: 150%;">
+                    <h1>Ali Ok</h1>
+                    <img src="https://pbs.twimg.com/profile_images/1656267727076466688/awQR7f4R_400x400.jpg" style="width: 10rem; height: auto;"/>
+                    <p>
+                        Principal Software Engineer at <a href="https://www.redhat.com" target="_blank">Red Hat</a>
+                    </p>
+                    <p>
+                        <a href="https://www.cncf.io/people/ambassadors/?p=ali-ok" target="_blank">CNCF Ambassador</a>
+                    </p>
+                    <p>
+                        <a href="https://knative.dev/" target="_blank">Knative</a> contributor
+                    </p>
+                    <p>
+                        Twitter: <a href="https://twitter.com/aliok_tr" target="_blank">@aliok_tr</a>
+                    </p>
+                    <p>
+                        LinkedIn: <a href="https://www.linkedin.com/in/aliok" target="_blank">aliok</a>
+                    </p>
                 </div>
             </div>
-            {% if mod == 1 %}
-        </div>
-        {% endif %}
 
-        {% endfor %}
-
-        {% assign project_count = site.projects | size %}
-        {% if project_count < 4 %}
-        {% assign mod = project_count | modulo:2 %}
-        {% if mod == 1 %}
-        <!--if project count is 1 or 3, we need to add another span and end the row-->
-        <div class="span6"></div>
-    </div>
-    {% endif %}
-    {% endif %}
-</div>
-
-<h1 class="page-heading-middle">
-    Older <a href="{{ 'projects.html' | prepend: site.baseurl }}">projects</a>
-</h1>
-
-<div class="project-list subdued">
-    {% assign sorted_posts = (site.projects | sort: 'date') | reverse %}
-    {% for post in sorted_posts offset:4 %}
-    <div class="row">
-        <div class="span12">
-            <div class="row project-list-item">
-                <div class="span3">
-                    <div class="project-thumbnail" style="background-image: url('{{ post.thumbnail | prepend: site.baseurl }}');"></div>
-                </div>
-                <div class="span9">
-                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
-                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-
-                    <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
-                    <span class="project-summary">{{ post.content | split:'<!--more-->' | first }}</span>
-                </div>
-            </div>
         </div>
     </div>
-    {% endfor %}
 </div>
 
-<div class="big-link-wrapper">
-    <a class="big-link" href="{{ 'projects.html' | prepend: site.baseurl }}">See more of my projects</a>
-</div>
+</body>
 
-</div>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-<div class="home">
+    ga('create', 'UA-55426410-1', 'auto');
+    ga('send', 'pageview');
 
-    <h1 class="page-heading-big">
-        Last 4 <a href="{{ 'techposts.html' | prepend: site.baseurl }}">tech posts</a>
-    </h1>
+</script>
 
-    <div class="misc-list">
-        {% assign sorted_posts = (site.techposts | sort: 'date') | reverse %}
-        {% for post in sorted_posts limit:4 %}
-        <div class="row">
-            <div class="span12">
-                <div class="misc-list-item">
-                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
-                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-
-                    <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
-                    <span class="misc-summary">{{ post.content | split:'<!--more-->' | first }}</span>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
-    <div class="big-link-wrapper">
-        <a class="big-link" href="{{ 'techposts.html' | prepend: site.baseurl }}">See more tech</a>
-    </div>
-
-</div>
-
-
-<div class="home">
-
-    <h1 class="page-heading-big">
-        Last 4 <a href="{{ 'miscposts.html' | prepend: site.baseurl }}"> misc posts</a>
-    </h1>
-
-    <div class="misc-list">
-        {% assign sorted_posts = (site.miscposts | sort: 'date') | reverse %}
-        {% for post in sorted_posts limit:4 %}
-        <div class="row">
-            <div class="span12">
-                <div class="misc-list-item">
-                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} {{ i }}</span>
-                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-
-                    <!--using the idea from http://melandri.net/2013/11/24/manage-posts-excerpt-in-jekyll/-->
-                    <span class="misc-summary">{{ post.content | split:'<!--more-->' | first }}</span>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
-    <div class="big-link-wrapper">
-        <a class="big-link" href="{{ 'miscposts.html' | prepend: site.baseurl }}">See more misc</a>
-    </div>
-
-</div>
+</html>
